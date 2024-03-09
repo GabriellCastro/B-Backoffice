@@ -11,21 +11,21 @@ The Gestão app has been designed to streamline the back office team's work with
 
 ```bash
 # Run the git clone command to clone the repository
-$ git clone git@github.com:GabriellCastro/Backoffice_backend.git
+$ git clone git@github.com:GabriellCastro/B-Backoffice.git
 
 # Enter the cloned repository folder
-$ cd Backoffice_backend
+$ cd B-Backoffice
 
 # Run yarn to install dependencies
 $ yarn
 
-# At the root of the project (Backoffice_backend)
+# At the root of the project (B-Backoffice)
 # Change the name from .env.example to .env
 
-# Run docker in the root of the project (Backoffice_backend)
+# Run docker in the root of the project (B-Backoffice)
 $ sudo docker compose up -d
 
-# Run prism migrate on the root of the project (Backoffice_backend)
+# Run prism migrate on the root of the project (B-Backoffice)
 $ yarn prisma migrate dev
 
 # run the seed and generate an ADM accoun (see the log in the terminal)
