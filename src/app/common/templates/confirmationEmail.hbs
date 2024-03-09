@@ -1,0 +1,84 @@
+<html lang='pt-br'>
+
+  <head>
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'
+      rel='stylesheet'
+    />
+    <script src='https://unpkg.com/@phosphor-icons/web'></script>
+    <style>* { padding: 0; margin: 0; list-style: none; box-sizing: border-box;
+      } a {text-decoration: none; color: #000; max-width: fit-content; max-height: fit-content;} body { background-color: #d1d1d1; color: #1d1d1d; padding: 32px;
+      font-family: 'Inter', sans-serif; } .container { width: 100%; padding:
+      32px; max-width: 640px; margin-left: auto; margin-right: auto;
+      background-color: white; } /* Image */ .image-container {
+      background-color: #d1d1d1; padding: 24px; } .image-container img { width:
+      100%; max-height: 270px; object-fit: contain; } /* Header */ header {
+      padding: 20px 32px; } header h1 { font-size: 32px; font-weight: 900;
+      text-align: center; } /* Main */ main { padding: 32px; display: flex;
+      flex-direction: column; gap: 30px; } main i.alert-icon { color: #f03e3e;
+      font-size: 32px; } main h2 { font-size: 32px; } main p { font-size: 20px;
+      line-height: 150%; } main button { padding: 16px; border-radius: 5px;
+      background: #8B5CF6; border: 0; font-size: 20px; font-weight: 700; cursor:
+      pointer; align-self: flex-start; } main button.primary-button {
+      background: #8B5CF6; } main button.primary-button { color: #fff } a main button.alert-button { background: #f03e3e;
+      color: white; } /* Code */ .code { display: flex; gap: 8px;
+      justify-content: space-between; } .code-number-container { padding: 16px;
+      font-size: 64px; font-weight: 700; background-color: #d1d1d1;
+      border-radius: 5px; border: 1px solid #8B5CF6; } /* Footer */ footer {
+      padding: 32px; display: flex; flex-direction: column; gap: 30px; } footer
+      .footer { display: flex; justify-content: space-between; align-items:
+      center; } footer .footer-logo { font-size: 20px; font-weight: 900; }
+      footer .footer-icons { display: flex; gap: 16px; align-items: center; }
+      footer .footer-icons i { font-size: 24px; cursor: pointer; } @media screen
+      and (max-width: 750px) { .code-number-container { font-size: 48px; } }
+      @media screen and (max-width: 600px) { .code { gap: 8px; }
+      .code-number-container { font-size: 40px; padding: 14px; } body { padding:
+      24px; } .container, main, footer { padding: 16px; } header { padding: 16px
+      24px; } .image-container { padding: 16px; } main { gap: 24px; } main h2 {
+      font-size: 26px; } main button { width: 100%; } footer p { font-size:
+      14px; } } @media screen and (max-width: 460px) { .code { gap: 4px; }
+      .code-number-container { font-size: 32px; padding: 12px; } body { padding:
+      16px; } main h2 { font-size: 24px; } main p { font-size: 16px; } body {
+      padding: 12px; } .container, main, footer { padding: 12px; } footer p {
+      font-size: 12px; } } @media screen and (max-width: 400px) {
+      .code-number-container { font-size: 30px; padding: 8px; } } @media screen
+      and (max-width: 320px) { .code-number-container { font-size: 24px;
+      padding: 6px; } }
+    </style>
+  </head>
+
+  <body>
+    <div class='container'>
+      <header>
+        <h1>Backoffice</h1>
+      </header>
+      <main>
+        <h2>Bem vindo à Gestão</h2>
+        <p>Olá {{ username }}, obrigado por fazer o seu cadastro na Gestão. Clique
+          abaixo para confirmar seu e-mail:</p>
+          <a href="{{ url }}"><button class='primary-button'>Confirmar e-mail</button></a>
+      </main>
+      <footer>
+        <p>
+          Este e-mail foi enviado para {{ email }}.
+          <br />
+          <br />
+          2023 Backoffice.
+        </p>
+        <div class='footer'>
+          <div>
+            <span class='footer-logo'>Backoffice</span>
+          </div>
+          <div class='footer-icons'>
+            <i class='ph-fill ph-whatsapp-logo'></i>
+            <i class='ph-fill ph-facebook-logo'></i>
+            <i class='ph-fill ph-instagram-logo'></i>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+</html>

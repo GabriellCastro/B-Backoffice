@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String           @id @default(uuid())
+  name          String
+  cpf           String           @unique
+  email         String           @unique
+  password      String
+  whatsApp      String
+  role          Role             @default(OPERATOR)
+  profile       OperatorProfile?
+  address       Address?
+  activated     Boolean          @default(false)
+  emailVerify   String?          @unique
+  passwordReset String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  coordinates   Coordinates?
+}
+
+model Address {
+  id         String  @id @unique @default(uuid())
+  user       User?   @relation(fields: [userId], references: [id])
+  userId     String? @unique
+  cep        String
+  address    String
+  complement String?
+  street     String
+  number     String
+  city       String
+  state      String
+}
+
+model Coordinates {
+  id        String  @id @unique @default(uuid())
+  user      User?   @relation(fields: [userId], references: [id])
+  userId    String? @unique
+  latitude  Float
+  longitude Float
+}
+
+enum Role {
+  ADMINISTRATOR
+  MANAGER
+  OPERATOR
+  CLIENT
+}
+
+enum OperatorProfile {
+  OP_RETRO
+  OP_EXCAVATOR
+  OP_ROLO
+  OP_MOTORLEVELER
+  DUMP_TRUCK_DRIVER
+  LARGE_DUMP_TRUCK_DRIVER
+  PLATFORM_TRUCK_DRIVER
+}
+
+enum LocationTypes {
+  LINDEIRO
+  HOTEL
+  GUESTHOUSE
+  CRUSHING
+  QUARRY
+  MUNICIPAL_DEPOSIT
+  HORTO_DEPOSIT
+}
